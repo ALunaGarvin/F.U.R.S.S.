@@ -300,15 +300,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Boton.cs" />
-    <Compile Include="Assets\Escalera.cs" />
-    <Compile Include="Assets\Murcielago.cs" />
-    <Compile Include="Assets\Puerta.cs" />
-    <Compile Include="Assets\Rana.cs" />
     <Compile Include="Assets\Scripts\Generador\ColorManagement.cs" />
     <Compile Include="Assets\Scripts\Generador\Generator.cs" />
+    <Compile Include="Assets\Scripts\IA\Monje.cs" />
+    <Compile Include="Assets\Scripts\IA\Murcielago.cs" />
+    <Compile Include="Assets\Scripts\IA\Rana.cs" />
     <Compile Include="Assets\Scripts\Luz\LightScript.cs" />
     <Compile Include="Assets\Scripts\Luz\SpotLightScript.cs" />
+    <Compile Include="Assets\Scripts\Otros\Boton.cs" />
+    <Compile Include="Assets\Scripts\Otros\Escalera.cs" />
+    <Compile Include="Assets\Scripts\Otros\Puerta.cs" />
     <Compile Include="Assets\Scripts\Personaje\Constrol.cs" />
     <Compile Include="Assets\SpotLight.cs" />
   </ItemGroup>

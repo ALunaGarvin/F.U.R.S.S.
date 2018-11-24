@@ -11,15 +11,17 @@ public class Constrol : MonoBehaviour
     private bool onFloor, space = false, onStair = false;
     public GameObject luzInstanciada;
     Rigidbody2D rb;
+    Collider2D col;
     public Camera camara;
+    public bool pierde = false, gana = false;
     void Start()
     {
         transform.parent = null;
         rb = GetComponent<Rigidbody2D>();
+        col = GetComponent<Collider2D>();
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        //Detecta si está en el suelo o no
         if (onFloor == false)
         {
             if (collision.gameObject.layer == 8)
@@ -27,17 +29,29 @@ public class Constrol : MonoBehaviour
                 onFloor = true;
             }
         }
+        if (collision.gameObject.layer == 10)
+        {
+            Physics2D.IgnoreCollision(collision.collider, col);
+        }
 
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-
-            if (collision.gameObject.layer == 9)
+        if (collision.gameObject.layer == 11)
+        {
+            Animator animMonje = GetComponent<Animator>();
+            animMonje.SetBool("Agua", true);
+            pierde = true;
+        }
+        if (collision.gameObject.layer == 12)
+        {
+            gana = true;
+        }
+        if (collision.gameObject.layer == 9)
             {
             onStair = true;
                 if (space == true)
                 {
-                    Debug.Log("OLE");
                     Transform escalera = collision.gameObject.GetComponent<Escalera>().otroLado.transform;
 
                     EscaleraFuncion(escalera);

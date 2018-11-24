@@ -113,92 +113,48 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &261977161
+--- !u!1001 &413703437
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4478822269424534, guid: fa2ac37606c0346498f9e4e4693bd42e, type: 2}
+    - target: {fileID: 4597016165054622, guid: e6b43e4671a7e3747bb8b08471677522, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 1.7307439
+      value: 21.795252
       objectReference: {fileID: 0}
-    - target: {fileID: 4478822269424534, guid: fa2ac37606c0346498f9e4e4693bd42e, type: 2}
+    - target: {fileID: 4597016165054622, guid: e6b43e4671a7e3747bb8b08471677522, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 2.132207
+      value: -0.71800005
       objectReference: {fileID: 0}
-    - target: {fileID: 4478822269424534, guid: fa2ac37606c0346498f9e4e4693bd42e, type: 2}
+    - target: {fileID: 4597016165054622, guid: e6b43e4671a7e3747bb8b08471677522, type: 2}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4478822269424534, guid: fa2ac37606c0346498f9e4e4693bd42e, type: 2}
+    - target: {fileID: 4597016165054622, guid: e6b43e4671a7e3747bb8b08471677522, type: 2}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 4478822269424534, guid: fa2ac37606c0346498f9e4e4693bd42e, type: 2}
+    - target: {fileID: 4597016165054622, guid: e6b43e4671a7e3747bb8b08471677522, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 4478822269424534, guid: fa2ac37606c0346498f9e4e4693bd42e, type: 2}
+    - target: {fileID: 4597016165054622, guid: e6b43e4671a7e3747bb8b08471677522, type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 4478822269424534, guid: fa2ac37606c0346498f9e4e4693bd42e, type: 2}
+    - target: {fileID: 4597016165054622, guid: e6b43e4671a7e3747bb8b08471677522, type: 2}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4478822269424534, guid: fa2ac37606c0346498f9e4e4693bd42e, type: 2}
+    - target: {fileID: 4597016165054622, guid: e6b43e4671a7e3747bb8b08471677522, type: 2}
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 61271190502822782, guid: fa2ac37606c0346498f9e4e4693bd42e,
-        type: 2}
-      propertyPath: m_Size.x
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 61271190502822782, guid: fa2ac37606c0346498f9e4e4693bd42e,
-        type: 2}
-      propertyPath: m_Offset.x
-      value: -0.34
-      objectReference: {fileID: 0}
-    - target: {fileID: 212942822889665016, guid: fa2ac37606c0346498f9e4e4693bd42e,
-        type: 2}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 7416acaea8532db45af15a3b4faea937,
-        type: 3}
-    - target: {fileID: 212942822889665016, guid: fa2ac37606c0346498f9e4e4693bd42e,
-        type: 2}
-      propertyPath: m_WasSpriteAssigned
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: fa2ac37606c0346498f9e4e4693bd42e, type: 2}
+  m_SourcePrefab: {fileID: 100100000, guid: e6b43e4671a7e3747bb8b08471677522, type: 2}
   m_IsPrefabAsset: 0
---- !u!1 &261977162 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1991430150799244, guid: fa2ac37606c0346498f9e4e4693bd42e,
-    type: 2}
-  m_PrefabInternal: {fileID: 261977161}
---- !u!95 &261977163
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 261977162}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 4b34c4810df4ab343960a38b5e0e929a, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1204291248
 GameObject:
   m_ObjectHideFlags: 0
@@ -239,37 +195,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5de3f00575834d740ba1712b31dc873f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mapa: {fileID: 2800000, guid: 640ee6aea24c05e4993829a10500d2d1, type: 3}
+  mapa: {fileID: 2800000, guid: 4bcb8e9bd8555b54dbfb3de43c987f4f, type: 3}
   colorObjects:
-  - Name: Suelo
-    color: {r: 1, g: 0, b: 0, a: 1}
-    prefab: {fileID: 1587495343693664, guid: a0a2dffe05916ff47908e0fee13b47cd, type: 2}
-    pixels: {x: 0, y: 0}
-  - Name: Palanca
-    color: {r: 0.78431374, g: 0.78431374, b: 0, a: 1}
-    prefab: {fileID: 1305560794663638, guid: 995992b5a46728c4f893f2b8d878f091, type: 2}
-    pixels: {x: 0, y: 0}
   - Name: Boton
-    color: {r: 0.5882353, g: 0.5882353, b: 0, a: 1}
-    prefab: {fileID: 1252549941533082, guid: ca2569869de25334c9c4ad518a58b891, type: 2}
+    color: {r: 1, g: 0, b: 0, a: 1}
+    prefab: {fileID: 1012949319703196, guid: 6f575d63c75dbfd4293bb548f852d6ea, type: 2}
     pixels: {x: 0, y: 0}
   - Name: Player
     color: {r: 1, g: 1, b: 1, a: 1}
     prefab: {fileID: 1349587807262536, guid: fa738f0045f3fc941896dd0754ee0986, type: 2}
     pixels: {x: 0, y: 0}
-  - Name: Murcielago
-    color: {r: 0, g: 0, b: 0, a: 1}
-    prefab: {fileID: 1071720893623114, guid: ab0f0756eb6afec4aa5224a5c36a6802, type: 2}
+  - Name: BloqueAmarillo
+    color: {r: 0, g: 1, b: 0, a: 1}
+    prefab: {fileID: 1944266061221614, guid: 588d3475110b17345911874488f687c4, type: 2}
     pixels: {x: 0, y: 0}
   - Name: Rana
-    color: {r: 0, g: 1, b: 0, a: 1}
-    prefab: {fileID: 1541739666817610, guid: 7cfa07ac213ebe54f947981fe90a82cb, type: 2}
+    color: {r: 0, g: 0, b: 1, a: 1}
+    prefab: {fileID: 1378234873359750, guid: 2afb031ac5082f8469bfdab605331f4e, type: 2}
     pixels: {x: 0, y: 0}
-  - Name: WIN
+  - Name: Puerta
     color: {r: 1, g: 1, b: 0, a: 1}
-    prefab: {fileID: 1506679813936486, guid: 257b1e11d08686b42b46d901ec42bdc4, type: 2}
+    prefab: {fileID: 1991430150799244, guid: fa2ac37606c0346498f9e4e4693bd42e, type: 2}
     pixels: {x: 0, y: 0}
-  - Name: Antorcha
-    color: {r: 1, g: 1, b: 1, a: 1}
-    prefab: {fileID: 1541739666817610, guid: 7cfa07ac213ebe54f947981fe90a82cb, type: 2}
+  - Name: Monje
+    color: {r: 1, g: 0, b: 0.43137255, a: 1}
+    prefab: {fileID: 1518616342794442, guid: e6b43e4671a7e3747bb8b08471677522, type: 2}
     pixels: {x: 0, y: 0}
