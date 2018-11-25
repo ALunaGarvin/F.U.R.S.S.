@@ -8,6 +8,7 @@ public class Generator : MonoBehaviour {
     public ColorManagement[] colorObjects;
     float lastPixelX = 0, lastPixelY = 0, calculoXanterior = 0, calculoYanterior = 0;
 	void Awake () {
+        mapa = GameObject.FindGameObjectWithTag("Niveles").GetComponent<Niveles>().SpriteLevel;
 		for(int x = 0; x< mapa.width; x++)
         {
             for(int y = 0; y < mapa.height; y++)

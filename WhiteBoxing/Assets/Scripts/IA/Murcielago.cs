@@ -8,6 +8,7 @@ public class Murcielago : MonoBehaviour {
     Animator anim;
     public float vel;
     float Xposition;
+    public SpriteRenderer spr;
     private float alturaSalto;
     private bool llega = false, OnFloor = true;
     private void Start()
@@ -31,7 +32,12 @@ public class Murcielago : MonoBehaviour {
     {
         if (col.tag == "Luz")
         {
-             rb.AddForce((transform.position - col.transform.position) * vel * 200 * Time.deltaTime);
+            Vector2 movDirc = transform.position - col.transform.position;
+            transform.Translate(movDirc.normalized * vel * Time.deltaTime);
+            if (movDirc.normalized.x < 0)
+            {
+                spr.flipX = true;
+            }
 
 
         }

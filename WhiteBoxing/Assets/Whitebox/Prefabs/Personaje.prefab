@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4490245517904632}
   - component: {fileID: 212190615435100172}
+  - component: {fileID: 95512766663542142}
   m_Layer: 0
   m_Name: Personaje
   m_TagString: Player
@@ -58,7 +59,7 @@ GameObject:
   - component: {fileID: 61466305755352804}
   m_Layer: 10
   m_Name: Personaje
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -96,7 +97,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1349587807262536}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.63, y: -2.710921, z: -0.123046875}
+  m_LocalPosition: {x: 28.260096, y: 4.529155, z: -0.123046875}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4490245517904632}
@@ -221,6 +222,24 @@ AudioListener:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1164499554987276}
   m_Enabled: 1
+--- !u!95 &95512766663542142
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1040139263688014}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fb70aed7b052f8c4a891993fa9502979, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114095462668750582
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -233,12 +252,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vel: 4
-  saltoFuerza: 100
-  VelMax: 10
+  saltoFuerza: 50
+  VelMax: 5
   velEscalera: 0
   luzInstanciada: {fileID: 1876045826541194, guid: a450abbec95004746bb45888b9dae70a,
     type: 2}
+  col: {fileID: 0}
+  col1: {fileID: 0}
+  spr: {fileID: 212190615435100172}
+  anim: {fileID: 95512766663542142}
   camara: {fileID: 0}
+  niveles: {fileID: 0}
+  pierde: 0
+  gana: 0
 --- !u!212 &212190615435100172
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -274,7 +300,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: faf82885323b29545baeaadbb7f1d99a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5c7f98c99756f4b43adc230074fad75d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

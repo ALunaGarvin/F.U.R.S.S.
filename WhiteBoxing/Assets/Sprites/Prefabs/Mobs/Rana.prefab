@@ -59,7 +59,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 3
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -144,10 +144,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 824aec2670cb29346bd54a6aa29c2942, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vel: 0.1
-  distanciaMinSlato: 2
-  distanciaMaxSalto: 2
-  fuerzaSalto: 50
+  spr: {fileID: 0}
+  vel: 1
+  distanciaMinSalto: 2
+  fuerzaSalto: 200
 --- !u!212 &212041966428191144
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -163,7 +163,7 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: acecd745835c9104b8e68a4d6b67838a, type: 2}
+  - {fileID: 2100000, guid: 6a4e2229a8a55534cb80566521b9e134, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

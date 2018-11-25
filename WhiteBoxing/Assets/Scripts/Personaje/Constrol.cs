@@ -8,14 +8,19 @@ public class Constrol : MonoBehaviour
 
     public int vel, saltoFuerza, VelMax, velEscalera;
     private int Multiplicador = 200;
-    private bool onFloor, space = false, onStair = false;
+    private bool onFloor, space = false, onStair = false, OnManta = false;
     public GameObject luzInstanciada;
     Rigidbody2D rb;
-    Collider2D col;
+    public Collider2D col, col1;
+    public SpriteRenderer spr;
+    public Animator anim;
     public Camera camara;
+    public Niveles niveles;
     public bool pierde = false, gana = false;
     void Start()
     {
+        VelMax = 5;
+        niveles = GameObject.FindGameObjectWithTag("Niveles").GetComponent<Niveles>();
         transform.parent = null;
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<Collider2D>();
@@ -39,18 +44,23 @@ public class Constrol : MonoBehaviour
     {
         if (collision.gameObject.layer == 11)
         {
-            Animator animMonje = GetComponent<Animator>();
-            animMonje.SetBool("Agua", true);
+           /* Animator animMonje = GetComponent<Animator>();
+            animMonje.SetBool("Agua", true);*/
             pierde = true;
+            collision.gameObject.GetComponentInParent<Monje>().anim.SetBool("Agua", true);
+            collision.gameObject.GetComponentInParent<Monje>().enabled = false;
+            anim.SetBool("Muerte", true);
+            Invoke("YouLose", 2);
         }
         if (collision.gameObject.layer == 12)
         {
             gana = true;
+            Invoke("YouWin", 1);
         }
         if (collision.gameObject.layer == 9)
             {
             onStair = true;
-                if (space == true)
+                if (Input.GetKeyDown(KeyCode.W))
                 {
                     Transform escalera = collision.gameObject.GetComponent<Escalera>().otroLado.transform;
 
@@ -69,7 +79,7 @@ public class Constrol : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Controles();
+       if(pierde != true) Controles();
         camara = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
     }
     void FixedUpdate()
@@ -83,60 +93,85 @@ public class Constrol : MonoBehaviour
 
     void Controles()
     {
-        //Moverse izquierda derecha
-        if (Input.GetKey(KeyCode.D))
+        if (OnManta != true)
         {
-            rb.AddForce(Vector2.right * vel * Multiplicador * Time.deltaTime);
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            rb.AddForce(Vector2.left * vel * Multiplicador * Time.deltaTime);
-        }
-
-        if (onFloor == true) //Salto
-        {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKey(KeyCode.D))
             {
-                space = true;
-                if (onStair == false)
-                {
-                    rb.AddForce(Vector2.up * saltoFuerza * Multiplicador * Time.deltaTime);
-                }
-                onFloor = false;
+                rb.AddForce(Vector2.right * vel * Multiplicador * Time.deltaTime);
+                spr.flipX = false;
             }
-            else space = false;
+            if (Input.GetKey(KeyCode.A))
+            {
+                rb.AddForce(Vector2.left * vel * Multiplicador * Time.deltaTime);
+                spr.flipX = true;
+            }
+
+            if (onFloor == true) //Salto
+            {
+                if (Input.GetKeyDown(KeyCode.W))
+                {
+                    anim.Play("salt");
+                    space = true;
+                    if (onStair == false)
+                    {
+                        rb.AddForce(Vector2.up * saltoFuerza * Multiplicador * Time.deltaTime);
+                    }
+                    onFloor = false;
+                }
+                else space = false;
+            }
         }
-
-        //Raton controles
-
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
+            anim.SetBool("Manta", true);
+            rb.velocity = Vector2.zero;
+            rb.constraints = RigidbodyConstraints2D.FreezePositionX;
+            rb.constraints = RigidbodyConstraints2D.FreezePositionY;
+            col.enabled = false;
+            col1.enabled = false;
+            OnManta = true;
+        }
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            OnManta = false;
+            anim.SetBool("Manta", false);
+            col.enabled = true;
+            col1.enabled = true;
+            rb.constraints = RigidbodyConstraints2D.None;
+            rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+        }
+        //Raton controles
+        if(OnManta != true) { 
+            if (Input.GetButtonDown("Fire1"))
+        {
+            anim.Play("bolav2");
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
             Vector3 LightPosition = ray.origin + ray.direction;
 
             Instantiate(luzInstanciada, LightPosition, Quaternion.identity);
         }
-        if (Input.GetButtonDown("Fire2"))
-        {
-            Vector3 m = Input.mousePosition;
-            m = new Vector3(m.x, m.y, transform.position.z);
-            Vector3 p = camara.ScreenToWorldPoint(m);
-
-            RaycastHit2D hit = new RaycastHit2D();
-            Ray2D ray2D = new Ray2D(new Vector2(p.x, p.y), Vector3.down);
-            hit = Physics2D.Raycast(new Vector2(p.x, p.y), Vector3.forward, 5.0f);
-
-            if(hit.collider.tag == "Luz")
+            if (Input.GetButtonDown("Fire2"))
             {
-                Destroy(hit.collider.gameObject);
-            }
-            if (hit.collider.tag == "SpotLight")
-            {
-                hit.collider.gameObject.GetComponent<SpotLightScript>().SpotLight = false;
-                hit.collider.gameObject.GetComponent<SpotLightScript>().render.enabled = false;
-            }
+                anim.Play("bolav2");
+                Vector3 m = Input.mousePosition;
+                m = new Vector3(m.x, m.y, transform.position.z);
+                Vector3 p = camara.ScreenToWorldPoint(m);
 
+                RaycastHit2D hit = new RaycastHit2D();
+                Ray2D ray2D = new Ray2D(new Vector2(p.x, p.y), Vector3.down);
+                hit = Physics2D.Raycast(new Vector2(p.x, p.y), Vector3.forward, 5.0f);
+
+                if (hit.collider.tag == "Luz")
+                {
+                    Destroy(hit.collider.gameObject);
+                }
+                if (hit.collider.tag == "SpotLight")
+                {
+                    hit.collider.gameObject.GetComponent<SpotLightScript>().SpotLight = false;
+                    hit.collider.gameObject.GetComponent<Animator>().SetBool("Fuego", true);
+                }
+            }
         }
     }
 
@@ -147,6 +182,14 @@ public class Constrol : MonoBehaviour
         transform.position = destination.position;
         col.enabled = true;
         space = false;
+    }
+    void YouLose()
+    {
+        niveles.botones.YouLose();
+    }
+    void YouWin()
+    {
+        niveles.botones.YouWin();
     }
 }
 

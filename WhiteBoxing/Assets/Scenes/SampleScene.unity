@@ -113,48 +113,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &413703437
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4597016165054622, guid: e6b43e4671a7e3747bb8b08471677522, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 21.795252
-      objectReference: {fileID: 0}
-    - target: {fileID: 4597016165054622, guid: e6b43e4671a7e3747bb8b08471677522, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -0.71800005
-      objectReference: {fileID: 0}
-    - target: {fileID: 4597016165054622, guid: e6b43e4671a7e3747bb8b08471677522, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4597016165054622, guid: e6b43e4671a7e3747bb8b08471677522, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4597016165054622, guid: e6b43e4671a7e3747bb8b08471677522, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4597016165054622, guid: e6b43e4671a7e3747bb8b08471677522, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4597016165054622, guid: e6b43e4671a7e3747bb8b08471677522, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4597016165054622, guid: e6b43e4671a7e3747bb8b08471677522, type: 2}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: e6b43e4671a7e3747bb8b08471677522, type: 2}
-  m_IsPrefabAsset: 0
 --- !u!1 &1204291248
 GameObject:
   m_ObjectHideFlags: 0
@@ -195,29 +153,73 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5de3f00575834d740ba1712b31dc873f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mapa: {fileID: 2800000, guid: 4bcb8e9bd8555b54dbfb3de43c987f4f, type: 3}
+  mapa: {fileID: 2800000, guid: a12e7fd41ea9c8944a5d81c3c64949fa, type: 3}
   colorObjects:
-  - Name: Boton
+  - Name: Personaje
     color: {r: 1, g: 0, b: 0, a: 1}
-    prefab: {fileID: 1012949319703196, guid: 6f575d63c75dbfd4293bb548f852d6ea, type: 2}
+    prefab: {fileID: 1587047920043566, guid: 9829e8dee162340499610f17b54f76ea, type: 2}
     pixels: {x: 0, y: 0}
-  - Name: Player
-    color: {r: 1, g: 1, b: 1, a: 1}
-    prefab: {fileID: 1349587807262536, guid: fa738f0045f3fc941896dd0754ee0986, type: 2}
-    pixels: {x: 0, y: 0}
-  - Name: BloqueAmarillo
+  - Name: Parets
     color: {r: 0, g: 1, b: 0, a: 1}
-    prefab: {fileID: 1944266061221614, guid: 588d3475110b17345911874488f687c4, type: 2}
+    prefab: {fileID: 1023327911810526, guid: 015ba2b3456d7b244a6e9592cecf3a24, type: 2}
     pixels: {x: 0, y: 0}
-  - Name: Rana
-    color: {r: 0, g: 0, b: 1, a: 1}
-    prefab: {fileID: 1378234873359750, guid: 2afb031ac5082f8469bfdab605331f4e, type: 2}
-    pixels: {x: 0, y: 0}
-  - Name: Puerta
+  - Name: Terra
     color: {r: 1, g: 1, b: 0, a: 1}
-    prefab: {fileID: 1991430150799244, guid: fa2ac37606c0346498f9e4e4693bd42e, type: 2}
+    prefab: {fileID: 1791048317147752, guid: 731f3904e28b0764e89cd2f753bb88e6, type: 2}
     pixels: {x: 0, y: 0}
-  - Name: Monje
-    color: {r: 1, g: 0, b: 0.43137255, a: 1}
-    prefab: {fileID: 1518616342794442, guid: e6b43e4671a7e3747bb8b08471677522, type: 2}
+  - Name: Escalera
+    color: {r: 0.5882353, g: 0.5882353, b: 0.5882353, a: 1}
+    prefab: {fileID: 1539036762952388, guid: 4859b7383965b5b479d3ae42af8d0ffc, type: 2}
+    pixels: {x: 0, y: 0}
+  - Name: Granota
+    color: {r: 1, g: 1, b: 1, a: 1}
+    prefab: {fileID: 1753621548572434, guid: 6da78ee506a07374d84905c5cbc83742, type: 2}
+    pixels: {x: 0, y: 0}
+  - Name: Botons
+    color: {r: 0, g: 0, b: 0, a: 1}
+    prefab: {fileID: 1123807106718706, guid: 7074bfb2fc7fac74d94bfdc8f9c7b325, type: 2}
+    pixels: {x: 0, y: 0}
+  - Name: Porta e
+    color: {r: 0.5882353, g: 0, b: 0.5882353, a: 1}
+    prefab: {fileID: 1030846460982164, guid: 08659bee7a21e6f4fb3f274959768e74, type: 2}
+    pixels: {x: 0, y: 0}
+  - Name: WIN
+    color: {r: 0.5882353, g: 0.5882353, b: 0, a: 1}
+    prefab: {fileID: 1698915787639406, guid: 7ae09142a5d8e544baf6d98e3c9ca639, type: 2}
+    pixels: {x: 0, y: 0}
+  - Name: Ratpenat
+    color: {r: 0, g: 0.5882353, b: 0.5882353, a: 1}
+    prefab: {fileID: 1924900207228998, guid: 606170648f8af0047a02379064e1d13f, type: 2}
+    pixels: {x: 0, y: 0}
+  - Name: Torcha
+    color: {r: 0.5882353, g: 0, b: 0, a: 1}
+    prefab: {fileID: 1990739062217862, guid: d1bdb9a9b1dd9d44884af950bc3e2163, type: 2}
+    pixels: {x: 0, y: 0}
+  - Name: Porta d
+    color: {r: 0, g: 0.5882353, b: 0, a: 1}
+    prefab: {fileID: 1096304550370076, guid: c081ad634aca7954f8159802da9db422, type: 2}
+    pixels: {x: 0, y: 0}
+  - Name: Bloc
+    color: {r: 0, g: 0, b: 0.5882353, a: 1}
+    prefab: {fileID: 1899976417043858, guid: 4904e6445b63f044088c7e3ebf9c230f, type: 2}
+    pixels: {x: 0, y: 0}
+  - Name: BruixaAtrapada
+    color: {r: 0.5882353, g: 1, b: 0.5882353, a: 1}
+    prefab: {fileID: 1551493764330402, guid: b97da1be00ea5ec4dac6b1e201871323, type: 2}
+    pixels: {x: 0, y: 0}
+  - Name: Monje m
+    color: {r: 1, g: 0.5882353, b: 0.5882353, a: 1}
+    prefab: {fileID: 1561569473681852, guid: b589cf165bb5a6a4fa9b55ddda419ed0, type: 2}
+    pixels: {x: 0, y: 0}
+  - Name: Monje q
+    color: {r: 1, g: 0.5882353, b: 1, a: 1}
+    prefab: {fileID: 1561569473681852, guid: b589cf165bb5a6a4fa9b55ddda419ed0, type: 2}
+    pixels: {x: 0, y: 0}
+  - Name: porta o e
+    color: {r: 0.5882353, g: 0.5882353, b: 1, a: 1}
+    prefab: {fileID: 1104277950028252, guid: 871142e6aeaaabd4cb084b1e3a793851, type: 2}
+    pixels: {x: 0, y: 0}
+  - Name: porta o d
+    color: {r: 0.3529412, g: 0.3529412, b: 0.3529412, a: 1}
+    prefab: {fileID: 1357088519617626, guid: 4b052005e52c4f4409bc347fc468727b, type: 2}
     pixels: {x: 0, y: 0}

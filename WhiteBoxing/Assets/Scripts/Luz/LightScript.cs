@@ -9,8 +9,15 @@ public class LightScript : MonoBehaviour {
     {
         if(collision.tag == "SpotLight")
         {
-            collision.gameObject.GetComponent<SpotLightScript>().SpotLight = true;
-            collision.gameObject.GetComponent<SpotLightScript>().render.enabled = true;
+            if (collision.GetComponent<SpotLightScript>().intesity <= 1)
+            {
+                collision.gameObject.GetComponent<SpotLightScript>().SpotLight = true;
+                Destroy(this.gameObject);
+            }
+        }
+        if (collision.tag == "Chica")
+        {
+            collision.gameObject.GetComponent<Animator>().SetBool("win", true);
             Destroy(this.gameObject);
         }
     }

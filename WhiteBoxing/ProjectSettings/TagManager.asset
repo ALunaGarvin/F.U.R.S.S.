@@ -7,6 +7,10 @@ TagManager:
   - Luz
   - SpotLight
   - Boton
+  - Murcielago
+  - Niveles
+  - LuzMonje
+  - Chica
   layers:
   - Default
   - TransparentFX
